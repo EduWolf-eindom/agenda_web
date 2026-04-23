@@ -1,16 +1,29 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "sqlite:///./agenda.db"
-
-engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
+# Usa PostgreSQL no Render e SQLite localmente
+DATABASE_URL = os.environ.get(
+    "DATABASE_URL",
+    "sqlite:///./agenda.db"
 )
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={"check_same_thread": False}
+    if DATABASE_URL.startswith("sqlite")
+    else {}
+)
+
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
 
 Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()
