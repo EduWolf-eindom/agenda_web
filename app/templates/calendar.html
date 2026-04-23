@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda</title>
+
+  <!-- FullCalendar CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/modal.css">
+
+</head>
+<body>
+
+  <h1>📅 AGENDA </h1>
+
+  <div class="view-switch">
+    <button id="btnCalendar">Calendário</button>
+    <button id="btnListDay">Lista Diária</button>
+    <button id="btnListWeek">Lista Semanal</button>
+  </div>
+
+  <div id="listView" class="hidden">
+    <h2 id="listTitle"></h2>
+    <div id="listContent"></div>
+  </div>
+
+  <div id="calendar"></div>
+
+
+<!-- MODAL -->
+<div id="eventModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="modalTitle">Novo Compromisso</h2>
+
+    <input type="hidden" id="eventId" />
+    
+    <label>Cliente</label>
+    <div class="autocomplete-wrapper">
+      <input type="text" id="eventCliente" autocomplete="off" />
+      <div id="clienteDropdown" class="autocomplete-dropdown hidden"></div>
+    </div>
+
+    <label>Contrato</label>
+    <select id="eventContrato"></select>
+
+
+    <label>Assunto</label>
+    <select id="eventAssunto"></select>
+
+    <label>Fase</label>
+    <select id="eventFase"></select>
+
+    <label>Situação</label>
+    <select id="eventSituacao"></select>
+
+    <label>Data / Hora</label>
+    <input type="datetime-local" id="eventStart" />
+
+    <label>Descrição</label>
+    <textarea id="eventDescricao"></textarea>
+
+    <div class="modal-actions">
+      <button id="saveEvent">Salvar</button>
+      <button id="deleteEvent" class="danger">Excluir</button>
+      <button id="cancelEvent">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/static/css/modal.css">
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+
+  <!-- JS da agenda -->
+  <script src="/static/js/calendar.js"></script>
+
+</body>
+</html>

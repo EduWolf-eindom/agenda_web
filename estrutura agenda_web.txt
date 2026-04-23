@@ -1,0 +1,27 @@
+agenda_web/
+├── app/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── crud.py
+│   └── routers/
+│       ├── agenda_api.py
+│       └── views.py
+│
+├── templates/
+│   ├── base.html
+│   ├── calendar.html
+│   ├── daily.html
+│   ├── weekly.html
+│   └── monthly.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── calendar.js
+│
+├── agenda.db
+├── requirements.txt
+└── README.md
