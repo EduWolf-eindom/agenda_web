@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Banco local (não subir)
+*.db
+*.sqlite3
+
+# Variáveis de ambiente
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
